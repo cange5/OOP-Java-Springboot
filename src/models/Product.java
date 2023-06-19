@@ -54,9 +54,9 @@ public class Product {
     }
 
     public double inventoryPrice(){
-        double singolo = 0;
-        singolo=singolo+this.getPrice();
-        return singolo;
+        //double singolo = 0;
+        //singolo=singolo+this.getPrice();
+        return this.getPrice();
     }
 
     @Override
