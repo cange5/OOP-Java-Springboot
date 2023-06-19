@@ -24,7 +24,7 @@ public class Main {
                 Product p3 = new Product(
                         "A3",
                         "Shampoo",
-                        30
+                        10
                 );
                 p.put(p1.getId(), p1);
                 p.put(p2.getId(), p2);
