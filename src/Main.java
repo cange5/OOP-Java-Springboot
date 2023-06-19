@@ -1,40 +1,57 @@
-import models.Student;
+import models.Product;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.util.Objects.isNull;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
-    public static void main(String[] args) {
-            Map<String, Student> s = new HashMap<>();
-            Student s1 = new Student("Aldo");
-            Student s2 = new Student("Luca");
-            Student s3 = new Student("Domenico");
-            Student bestStudent = new Student();
-            s.put("S1", s1);
-            s.put("S2", s2);
-            s.put("S3", s3);
-            System.out.println(s1.getName());
-            s1.addGrade(30);
-            s1.addGrade(28);
-            s1.addGrade(25);
-            System.out.println(s1.getGrades());
-            System.out.printf("Media voti: %.1f\n", s1.getAverageGrade());
-            System.out.println(s2.getName());
-            s2.addGrade(30);
-            s2.addGrade(29);
-            s2.addGrade(25);
-            System.out.println(s2.getGrades());
-            System.out.printf("Media voti: %.1f\n", s2.getAverageGrade());
-            System.out.println(s3.getName());
-            s3.addGrade(30);
-            s3.addGrade(29);
-            s3.addGrade(29);
-            System.out.println(s3.getGrades());
-            System.out.printf("Media voti: %.1f\n", s3.getAverageGrade());
-            System.out.println(s);
-            bestStudent= bestStudent.compareStudents(s);
-            System.out.println("Lo studente con la miglior media è: " + bestStudent + ", Media: " + bestStudent.getAverageGrade());
-    }
+        public static void main(String[] args) {
+                double somma = 0;
+                Map<String, Product> p = new HashMap<>();
+                Product p1 = new Product(
+                        "A1",
+                        "Spazzolino",
+                        6
+                );
+                Product p2 = new Product(
+                        "A2",
+                        "Specchio",
+                        15
+                );
+                Product p3 = new Product(
+                        "A3",
+                        "Shampoo",
+                        3
+                );
+                p.put(p1.getId(), p1);
+                p.put(p2.getId(), p2);
+                p.put(p3.getId(), p3);
+                //Stampo l'inventario, ciclando l'HashMap p invece di usare System.out.println(p);
+                for (Map.Entry<String, Product> ele: p.entrySet()) {
+                        System.out.println("Inventario_ID: " + ele.getKey());
+                        ele.getValue().getDetails();
+                }
+                //Ritorno i dettagli di uno specifico prodotto
+                p.get("A1").getDetails();
+                //Rimuovo il prodotto con uno specifico ID
+                System.out.println("Eliminazione <<<" + p.get("A2") + ">>> in corso...");
+                if(isNull(p.remove("A2"))){
+                        System.out.println("Prodotto non eliminato!");
+                }else{
+                        System.out.println("Prodotto eliminato con successo!");
+                }
+                //Aggiorno il prezzo prodotto dato uno specifico ID
+                System.out.println("Aggiornamento prezzo <<<" + p.get("A1") + ">>> in corso...");
+                p.get("A1").updatePrice(30);
+                System.out.println(p);
+                //Calcolo l'ammontare totale dell'inventario, ciclo l'HashMap p
+                System.out.println("Calcolo costo inventario in corso...");
+                for (Map.Entry<String, Product> ele: p.entrySet()) {
+                        somma = somma + ele.getValue().inventoryPrice();
+                }
+                System.out.println("Il costo totale dell'inventario è: " + somma + " €");
+        }
 }
