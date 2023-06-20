@@ -6,7 +6,6 @@ public class Main {
         public static void main(String[] args) {
                 Counter c1 = new Counter(2);
                 Counter c2 = new Counter(3);
-                for(int i = 0; i<5; i++){
-                }
+
         }
 }
