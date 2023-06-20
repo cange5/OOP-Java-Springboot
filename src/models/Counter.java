@@ -1,26 +1,26 @@
 package models;
 
 public class Counter {
-    static int count=0;
+    public static int count=0;
     int number;
 
     public Counter(int number){
         this.number=number;
     }
 
-    static void incrementCount(){
-        count++;
+    public static void incrementCount(){
+        count+=1;
     }
 
-    static int getCount(){
+    public static int getCount(){
         return count;
     }
 
-    void setNumber(int number){
+    public void setNumber(int number){
         this.number=number;
     }
 
-    int getNumber(){
+    public int getNumber(){
         return this.number;
     }
 }
