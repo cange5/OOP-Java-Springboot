@@ -11,6 +11,9 @@ public class Main {
                 Counter.incrementCount();
                 System.out.println("Counter di C1 (dopo 2 incremento): " + c1.getCount() + ", Number di C1: " + c1.getNumber());
                 System.out.println("Counter di C2 (dopo incrementi): " + c2.getCount() + ", Number di C2: " + c2.getNumber());
+                c1.setNumber(10);
+                System.out.println("Number di C1 dopo averlo cambiato: " + c1.getNumber());
+                System.out.println("Number di C2 (non cambia): " + c2.getNumber());
 
         }
 }
