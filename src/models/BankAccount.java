@@ -5,12 +5,17 @@ public class BankAccount {
     String accountNumber;
     double balance;
 
+    public BankAccount(String accountNumber){
+        this.accountNumber=accountNumber;
+    }
+
     public static void setBankName(String name){
        bankName=name;
     }
 
     public void deposit(double amount){
-        this.balance=amount;
+        this.balance+=amount;
+        System.out.println("Your balance is: " + this.balance + ", Account Number (" + this.accountNumber + ")");
     }
 
     public double withDraw(double amount){
@@ -26,7 +31,7 @@ public class BankAccount {
 
     public void getAccountInfo(){
         System.out.println(
-                "Account Number: " + this.accountNumber + "Balance: " + this.balance + "Name of the Bank: " + bankName
+                "Account Number: " + this.accountNumber + ", Balance: " + this.balance + ", Name of the Bank: " + bankName
         );
     }
 }
