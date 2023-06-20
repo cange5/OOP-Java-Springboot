@@ -25,6 +25,8 @@ public class BankAccount {
     }
 
     public void getAccountInfo(){
-
+        System.out.println(
+                "Account Number: " + this.accountNumber + "Balance: " + this.balance + "Name of the Bank: " + bankName
+        );
     }
 }
