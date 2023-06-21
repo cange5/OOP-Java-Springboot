@@ -1,13 +1,13 @@
 package models;
 
-public class Car extends Vehicle{
+public class Motorcycle extends Vehicle{
 
     private int speed;
     private int numberOfTires;
 
-    public Car(int speed){
+    public Motorcycle(int speed){
         super.speed=speed;
-        this.numberOfTires=4;
+        this.numberOfTires=2;
     }
     @Override
     public int getNumbersOfTires() {
