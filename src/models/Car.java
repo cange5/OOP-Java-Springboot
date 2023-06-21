@@ -9,6 +9,7 @@ public class Car extends Vehicle{
         super.speed=speed;
         this.numberOfTires=4;
     }
+
     @Override
     public int getNumbersOfTires() {
         return this.numberOfTires;

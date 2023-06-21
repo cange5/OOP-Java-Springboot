@@ -6,8 +6,8 @@ import models.Vehicle;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
         public static void main(String[] args) {
-                Vehicle c1 = new Car(70);
-                Vehicle m1 = new Motorcycle(45);
+                Car c1 = new Car(70);
+                Motorcycle m1 = new Motorcycle(45);
 
                 System.out.println("Velocità macchina: " + c1.getSpeed());
                 System.out.println("Velocità moto: " + m1.getSpeed());
